@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
-    { path: '', component: HomeComponent },
+    { path: '', redirectTo: '/auth/register', pathMatch: 'full' },
     { path: 'auth', loadChildren: './auth/auth.module#AuthModule'},
     { path: '**', redirectTo: '/' },
 ];
