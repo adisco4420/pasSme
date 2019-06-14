@@ -11,6 +11,9 @@
           <div class="col-md-12 mb-3">
             <input formControlName="businessName" type="text" class="form-control form-control-lg"
             placeholder="what the name of your business?">
+            <div class="text-danger float-left" *ngIf="onboardControl.businessName.invalid && submitted">
+              Business Name is required
+            </div>
           </div>
           <div class="col-md-12 mb-3">
             <input formControlName="businessType" list="businnessType" placeholder="what does your business do?" class="form-control form-control-lg">
@@ -21,6 +24,9 @@
               <option value="Legal Service">
               <option value="Manufacturer">
             </datalist>
+            <div class="text-danger float-left" *ngIf="onboardControl.businessType.invalid && submitted">
+              Business Type is required
+            </div>
           </div>
           <div class="col-md-12 mb-3">
               <input formControlName="businessCountry" list="businessCountry" placeholder="which country is your business in?" class="form-control form-control-lg">
@@ -31,6 +37,9 @@
                 <option value="South Africa">
                 <option value="Togo">
               </datalist>
+              <div class="text-danger float-left" *ngIf="onboardControl.businessCountry.invalid && submitted">
+                Business Country is required
+              </div>
             </div>
             <div class="col-md-12 mb-4">
                 <input formControlName="businessCurrency" list="businessCurrency" placeholder="what currency does your business use?" class="form-control form-control-lg">
@@ -41,6 +50,9 @@
                   <option value="GBP - Pounds">
                   <option value="CAD - Canadian Dollar">
                 </datalist>
+                <div class="text-danger float-left" *ngIf="onboardControl.businessCurrency.invalid && submitted">
+                  Business Currency is required
+                </div>
               </div>
         <div class="col-md-12 ">
           <button type="submit" class="btn btn-success btn-block btn-round">Let's go!</button>
