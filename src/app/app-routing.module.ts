@@ -5,6 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
+    { path: 'auth', loadChildren: './auth/auth.module#AuthModule'},
     { path: '**', redirectTo: '/' },
 ];
 
