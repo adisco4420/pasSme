@@ -10,7 +10,8 @@
             "outDir": "dist-browser",
             "assets": [
                 "assets",
-                "favicon.ico"
+                "favicon.ico",
+                "_redirects"
             ],
             "index": "index.html",
             "main": "browser.main.ts",
