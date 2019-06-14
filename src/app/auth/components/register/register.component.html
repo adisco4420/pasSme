@@ -10,19 +10,19 @@
               <div class="row my-5">
                 <div class="col-md-12">
                   <input formControlName="email" type="email" placeholder="Email" class="form-control">
-                  <div class="text-danger float-left" *ngIf="email.invalid && email.touched" >
+                  <div class="text-danger float-left" *ngIf="email.invalid && submitted" >
                     <div *ngIf="email.errors['required']">email is required</div>
                     <div *ngIf="!email.errors['required'] && email.errors['email']">email address is invalid</div>
                   </div>
                 </div>
                 <div class="col-md-12 mt-2">
                   <input formControlName="password" type="password" placeholder="Password" class="form-control">
-                  <div class="text-danger float-left" *ngIf="password.invalid && password.touched">
+                  <div class="text-danger float-left" *ngIf="password.invalid && submitted">
                     <div *ngIf="password.errors['required']">password is required</div>
                     <div *ngIf="!password.errors['required'] && password.errors['minlength']">password minimum character is 6</div>
                   </div>
                   </div>
-                  <div class="col-md-12">
+                  <div class="col-md-12 mt-1">
                     <h6 class="text-muted float-left">
                       Password should be atleast 6 characters
                     </h6>

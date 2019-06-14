@@ -8,26 +8,26 @@
               <div class="row my-5 ">
                 <div class="col-md-12">
                   <input formControlName="email" type="email" placeholder="Email" class="form-control">
-                  <div class="text-danger float-left" *ngIf="email.invalid && email.touched" >
+                  <div class="text-danger float-left" *ngIf="email.invalid && submmitted" >
                     <div *ngIf="email.errors['required']">email is required</div>
                     <div *ngIf="!email.errors['required'] && email.errors['email']">email address is invalid</div>
                   </div>
                 </div>
                 <div class="col-md-12 mt-2">
                   <input formControlName="password" type="password" placeholder="Password" class="form-control">
-                  <div class="text-danger float-left" *ngIf="password.invalid && password.touched">
+                  <div class="text-danger float-left" *ngIf="password.invalid && submmitted">
                     <div *ngIf="password.errors['required']">password is required</div>
                   </div>
                 </div>
                 <div class="col-md-12">
-                  <h6 class="float-left mt-2"><a routerLink="#">Forget Password?</a></h6>
+                  <h6 class="float-left mt-2"><a routerLink="/auth/forget-password">Forget Password?</a></h6>
                   </div>
 
                 <div class="col-md-12 mt-4">
                 <button type="submit" class="btn btn-success btn-block btn-round">Sign in</button>
                 </div>
                 <div class="col-md-12 mt-3">
-                  <h6 class="text-muted">Don't have an account yet <a routerLink="/auth/register">Sign up now</a></h6>
+                  <h6 class="text-muted">Don't have an account yet? <a routerLink="/auth/register">Sign up now</a></h6>
                 </div>
 
               </div>

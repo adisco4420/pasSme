@@ -7,6 +7,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  submmitted = false;
   loginForm = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email ]),
     password: new FormControl('', [Validators.required]),
@@ -18,6 +19,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   login() {
+    this.submmitted = true;
     console.log(this.email);
 
   }

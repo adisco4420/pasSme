@@ -1,3 +1,4 @@
+import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { OnboardingComponent } from './components/onboarding/onboarding.component';
 import { NgModule } from '@angular/core';
@@ -9,7 +10,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'onboarding', component: OnboardingComponent},
-  { path: 'confirm', component: ConfirmationComponent}
+  { path: 'confirm', component: ConfirmationComponent},
+  { path: 'forget-password', component: ForgetPasswordComponent}
  ];
 
 @NgModule({
