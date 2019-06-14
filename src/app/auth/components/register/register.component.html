@@ -1,3 +1,42 @@
-<p>
-  register works!
-</p>
+<div class="container">
+  <div class="row mt-3 align-content-center">
+    <div class="col-md-6 offset-md-3 px-5">
+        <div><img class="img-responsive logo" src="/assets/img/passlogo.jpeg" alt="logo"></div>
+          <h3><b>Create an account with PasSme </b></h3>
+          <h6 class="text-muted">PasSme is an accounting software for small scale business
+            to help  manage their incomes and expenses</h6>
+          <div>
+            <form [formGroup]="registerForm" (ngSubmit)="register()" >
+              <div class="row my-5">
+                <div class="col-md-12">
+                  <input formControlName="email" type="email" placeholder="Email" class="form-control">
+                  <div class="text-danger float-left" *ngIf="email.invalid && email.touched" >
+                    <div *ngIf="email.errors['required']">email is required</div>
+                    <div *ngIf="!email.errors['required'] && email.errors['email']">email address is invalid</div>
+                  </div>
+                </div>
+                <div class="col-md-12 mt-2">
+                  <input formControlName="password" type="password" placeholder="Password" class="form-control">
+                  <div class="text-danger float-left" *ngIf="password.invalid && password.touched">
+                    <div *ngIf="password.errors['required']">password is required</div>
+                    <div *ngIf="!password.errors['required'] && password.errors['minlength']">password minimum character is 6</div>
+                  </div>
+                  </div>
+                  <div class="col-md-12">
+                    <h6 class="text-muted float-left">
+                      Password should be atleast 6 characters
+                    </h6>
+                  </div>
+                <div class="col-md-12 mt-4">
+                <button type="submit" class="btn btn-success btn-block btn-round">Get Started</button>
+                </div>
+                <div class="col-md-12 mt-3">
+                  <h6 class="text-muted">Already have an account? <a routerLink="/auth/login">Sign in</a></h6>
+                </div>
+
+              </div>
+            </form>
+          </div>
+    </div>
+  </div>
+</div>
