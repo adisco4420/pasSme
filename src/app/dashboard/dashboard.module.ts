@@ -4,14 +4,12 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { LandingComponent } from './components/landing/landing.component';
 import { SidebarComponent } from './components/core/sidebar/sidebar.component';
-import { DashHeaderComponent } from './components/core/dash-header/dash-header.component';
-import { MainComponent } from './components/core/main/main.component';
 
 @NgModule({
   imports: [
     CommonModule,
     DashboardRoutingModule
   ],
-  declarations: [LandingComponent, SidebarComponent, DashHeaderComponent, MainComponent]
+  declarations: [LandingComponent, SidebarComponent]
 })
 export class DashboardModule { }
