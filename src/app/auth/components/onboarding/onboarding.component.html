@@ -1,3 +1,52 @@
-<p>
-  onboarding works!
-</p>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <img class="img-responsive img-fluid" src="https://sloanreview.mit.edu/content/uploads/2018/09/GEN-Faro-Marketing-Market-Research-Big-Data-Analysis-1200.jpg" alt="image" />
+    </div>
+    <div class="col-md-6">
+      <div><img class="img-responsive logo" src="/assets/img/passlogo.jpeg" alt="logo"></div>
+      <h2 class=""><b>Tell us about your business</b></h2>
+      <form class="onboarding my-5" [formGroup]="onboardingForm" (ngSubmit)="setup()" >
+        <div class="row">
+          <div class="col-md-12 mb-3">
+            <input formControlName="businessName" type="text" class="form-control form-control-lg"
+            placeholder="what the name of your business?">
+          </div>
+          <div class="col-md-12 mb-3">
+            <input formControlName="businessType" list="businnessType" placeholder="what does your business do?" class="form-control form-control-lg">
+            <datalist  id="businnessType">
+              <option value="Design and Engineering">
+              <option value="Insurance">
+              <option value="IT, Technical">
+              <option value="Legal Service">
+              <option value="Manufacturer">
+            </datalist>
+          </div>
+          <div class="col-md-12 mb-3">
+              <input formControlName="businessCountry" list="businessCountry" placeholder="which country is your business in?" class="form-control form-control-lg">
+              <datalist  id="businessCountry">
+                <option value="Nigeria">
+                <option value="Ghana">
+                <option value="Kenya">
+                <option value="South Africa">
+                <option value="Togo">
+              </datalist>
+            </div>
+            <div class="col-md-12 mb-4">
+                <input formControlName="businessCurrency" list="businessCurrency" placeholder="what currency does your business use?" class="form-control form-control-lg">
+                <datalist  id="businessCurrency">
+                  <option value="NGN - Naira">
+                  <option value="USD - Dollar">
+                  <option value="EUR - Euro">
+                  <option value="GBP - Pounds">
+                  <option value="CAD - Canadian Dollar">
+                </datalist>
+              </div>
+        <div class="col-md-12 ">
+          <button type="submit" class="btn btn-success btn-block btn-round">Let's go!</button>
+        </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
