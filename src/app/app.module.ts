@@ -1,3 +1,4 @@
+import { CoreService } from './core/core.service';
 import { AuthService } from './auth/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -21,6 +22,6 @@ import { AuthGuard } from './core/auth.guard';
         AppRoutingModule,
         HttpClientModule
     ],
-    providers: [AuthGuard, AuthService]
+    providers: [AuthGuard, AuthService, CoreService]
 })
 export class AppModule { }
