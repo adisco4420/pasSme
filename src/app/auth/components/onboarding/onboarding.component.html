@@ -6,49 +6,46 @@
       <form class="onboarding my-5" [formGroup]="onboardingForm" (ngSubmit)="setup()" >
         <div class="row">
           <div class="col-md-12 mb-3">
-            <input formControlName="businessName" type="text" class="form-control form-control-lg"
+            <input formControlName="businessName" type="text" class="form-control"
             placeholder="what the name of your business?">
             <div class="text-danger float-left" *ngIf="onboardControl.businessName.invalid && submitted">
-              Business Name is required
+              business name is required
             </div>
           </div>
           <div class="col-md-12 mb-3">
-            <input formControlName="businessType" list="businnessType" placeholder="what does your business do?" class="form-control form-control-lg">
-            <datalist  id="businnessType">
-              <option value="Design and Engineering">
-              <option value="Insurance">
-              <option value="IT, Technical">
-              <option value="Legal Service">
-              <option value="Manufacturer">
-            </datalist>
+              <select formControlName="businnessSector" class="form-control">
+                  <option disabled value="">business sector?</option>
+                  <option *ngFor="let sector of sectors" [value]="sector.slug">{{sector.name}}</option>
+              </select>
+              <div class="text-danger float-left" *ngIf="onboardControl.businnessSector.invalid && submitted">
+                  business sector is required
+                </div>
+            </div>
+          <div class="col-md-12 mb-3">
+            <select name="businnessType" class="form-control" formControlName="businessType">
+              <option disabled value="">business type?</option>
+              <option *ngFor="let busType of businessTypes" [value]="busType.slug">{{busType.name}}</option>
+            </select>
             <div class="text-danger float-left" *ngIf="onboardControl.businessType.invalid && submitted">
-              Business Type is required
+              business type is required
             </div>
           </div>
           <div class="col-md-12 mb-3">
-              <input formControlName="businessCountry" list="businessCountry" placeholder="which country is your business in?" class="form-control form-control-lg">
-              <datalist  id="businessCountry">
-                <option value="Nigeria">
-                <option value="Ghana">
-                <option value="Kenya">
-                <option value="South Africa">
-                <option value="Togo">
-              </datalist>
+                <select formControlName="businessCountry" class="form-control">
+                  <option disabled value="">business country?</option>
+                  <option *ngFor="let country of countries" [value]="country.slug">{{country.name}}</option>
+                </select>
               <div class="text-danger float-left" *ngIf="onboardControl.businessCountry.invalid && submitted">
-                Business Country is required
+                business country is required
               </div>
             </div>
             <div class="col-md-12 mb-4">
-                <input formControlName="businessCurrency" list="businessCurrency" placeholder="what currency does your business use?" class="form-control form-control-lg">
-                <datalist  id="businessCurrency">
-                  <option value="NGN - Naira">
-                  <option value="USD - Dollar">
-                  <option value="EUR - Euro">
-                  <option value="GBP - Pounds">
-                  <option value="CAD - Canadian Dollar">
-                </datalist>
+              <select formControlName="businessCurrency" class="form-control">
+                <option value="">business currency?</option>
+                <option *ngFor="let currency of currencies" [value]="currency.slug">{{currency.name}}</option>
+              </select>
                 <div class="text-danger float-left" *ngIf="onboardControl.businessCurrency.invalid && submitted">
-                  Business Currency is required
+                  business currency is required
                 </div>
               </div>
         <div class="col-md-12 ">
