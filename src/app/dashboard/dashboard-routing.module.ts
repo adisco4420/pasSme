@@ -6,7 +6,7 @@ import { SidebarComponent } from './components/core/sidebar/sidebar.component';
 const routes: Routes = [
   { path: '', component: SidebarComponent,
     children: [
-      { path: 'landing', component: LandingComponent}
+      { path: '', component: LandingComponent}
     ]},
 ];
 
