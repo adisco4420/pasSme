@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
@@ -6,7 +7,7 @@ import { environment } from '../../environments/environment';
 export class AuthService {
   private authUrl = `${environment.baseUrl}/users`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   registerUser(user) {
     return this.http.post(`${this.authUrl}/register/`, user,
@@ -20,6 +21,10 @@ export class AuthService {
   }
   isLogin() {
     return localStorage.getItem('currentUser');
+  }
+  logout() {
+    localStorage.removeItem('currentUser');
+    return this.router.navigate(['/auth/login']);
   }
 
 }
