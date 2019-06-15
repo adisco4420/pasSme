@@ -41,7 +41,7 @@
             </div>
             <div class="col-md-12 mb-4">
               <select formControlName="businessCurrency" class="form-control">
-                <option value="">business currency?</option>
+                <option disabled value="">business currency?</option>
                 <option *ngFor="let currency of currencies" [value]="currency.slug">{{currency.name}}</option>
               </select>
                 <div class="text-danger float-left" *ngIf="onboardControl.businessCurrency.invalid && submitted">
