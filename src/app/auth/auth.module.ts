@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -15,7 +16,8 @@ import { AuthService } from './auth.service';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    AuthRoutingModule
+    AuthRoutingModule,
+    HttpClientModule
   ],
   declarations: [LoginComponent, RegisterComponent, OnboardingComponent, ConfirmationComponent, ForgetPasswordComponent],
   providers: [AuthService]
