@@ -8,6 +8,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { OnboardingComponent } from './components/onboarding/onboarding.component';
 import { ConfirmationComponent } from './components/confirmation/confirmation.component';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
+import { AuthService } from './auth.service';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { ForgetPasswordComponent } from './components/forget-password/forget-pas
     ReactiveFormsModule,
     AuthRoutingModule
   ],
-  declarations: [LoginComponent, RegisterComponent, OnboardingComponent, ConfirmationComponent, ForgetPasswordComponent]
+  declarations: [LoginComponent, RegisterComponent, OnboardingComponent, ConfirmationComponent, ForgetPasswordComponent],
+  providers: [AuthService]
 })
 export class AuthModule { }
