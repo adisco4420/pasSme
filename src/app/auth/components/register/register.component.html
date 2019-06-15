@@ -8,6 +8,13 @@
           <div>
             <form [formGroup]="registerForm" (ngSubmit)="register()" >
               <div class="row my-5">
+                <div *ngIf="sucMsg" class="col-md-12">
+                  <div class="alert alert-success">Registration Was Successful</div>
+                </div>
+                <div *ngIf="errMsg.status" class="col-md-12">
+                  <div *ngIf="errMsg.code !== 400" class="alert alert-danger">Sorry This Operation Could Not Be Performed</div>
+                  <div *ngIf="errMsg.code === 400" class="alert alert-danger">This Email Address Already Exist</div>
+                </div>
                 <div class="col-md-12">
                   <input formControlName="email" type="email" placeholder="Email" class="form-control">
                   <div class="text-danger float-left" *ngIf="email.invalid && submitted" >
@@ -28,7 +35,9 @@
                     </h6>
                   </div>
                 <div class="col-md-12 mt-4">
-                <button type="submit" class="btn btn-success btn-block btn-round">Get Started</button>
+                <button [disabled]="loading" type="submit" class="btn btn-success btn-block btn-round">
+                  Get Started <i *ngIf="loading" class="fa fa-spinner fa-spin"></i>
+                </button>
                 </div>
                 <div class="col-md-12 mt-3">
                   <h6 class="text-muted">Already have an account? <a routerLink="/auth/login">Sign in</a></h6>
