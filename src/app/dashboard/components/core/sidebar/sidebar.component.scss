@@ -7,15 +7,19 @@ body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
 }
-
-p {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1em;
-    font-weight: 300;
-    line-height: 1.7em;
-    color: #999;
+.bt-grn{
+  background-color: $bg-lt-green;
 }
+.header .dropdown-toggle:after { content: none }
 
+.dis-inline {
+  display: inline;
+  font-weight: 600;
+}
+.list-unstyled ul li a{
+  font-size: 16px !important;
+  font-weight: 500
+}
 a,
 a:hover,
 a:focus {
@@ -77,9 +81,10 @@ a:focus {
 }
 
 #sidebar ul.components {
-    padding: 20px 0;
+    padding-left: 10%;
     // border-bottom: 1px solid #47748b;
 }
+
 .sidebar-list{
     list-style: none
 }
@@ -101,8 +106,8 @@ a:focus {
 }
 
 #sidebar ul li a:hover {
-    color: $bg-lt-green;
-    background: #fff;
+    // color: $bg-lt-green;
+    // background: #fff;
 }
 
 #sidebar ul li.active>a,

@@ -2,47 +2,83 @@
   <!-- Sidebar -->
   <nav id="sidebar">
       <div class="sidebar-header">
-          <h3>PasSme</h3>
+          <h2>PasSme</h2>
       </div>
 
       <ul class="list-unstyled components">
-          <p>Dummy Heading</p>
           <li class="active">
-              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+              <a href="#"> <i class="fa fa-tachometer-alt"></i> <p class="mr-1 dis-inline">Dashboard</p></a>
+          </li>
+          <li >
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                  <i class="fa  fa-credit-card"></i> <p class="mr-1 dis-inline">Sales</p>
+              </a>
               <ul class="collapse list-unstyled" id="homeSubmenu">
                   <li>
-                      <a href="#">Home 1</a>
+                      <a href="#">Estimates</a>
                   </li>
                   <li>
-                      <a href="#">Home 2</a>
+                      <a href="#">Invoices</a>
                   </li>
                   <li>
-                      <a href="#">Home 3</a>
+                      <a href="#">Customers</a>
+                  </li>
+                  <li>
+                      <a href="#">Products &amp; Services</a>
                   </li>
               </ul>
           </li>
           <li>
-              <a href="#">About</a>
-          </li>
-          <li>
-              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                  <i class="fa  fa-shopping-cart"></i> <p class="mr-1 dis-inline">Purchases</p>
+              </a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
                   <li>
-                      <a href="#">Page 1</a>
+                      <a href="#">Bills</a>
                   </li>
                   <li>
-                      <a href="#">Page 2</a>
+                      <a href="#">Receipts</a>
                   </li>
                   <li>
-                      <a href="#">Page 3</a>
+                      <a href="#">Vendors</a>
                   </li>
               </ul>
           </li>
           <li>
-              <a href="#">Portfolio</a>
+              <a href="#accounting" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                  <i class="fa  fa-balance-scale"></i> <p class="mr-1 dis-inline">Accounting</p>
+              </a>
+              <ul class="collapse list-unstyled" id="accounting">
+                  <li>
+                      <li>
+                          <a href="#">Transactions</a>
+                      </li>
+                      <li>
+                          <a href="#">Reconsilations</a>
+                   </li>
+              </ul>
           </li>
           <li>
-              <a href="#">Contact</a>
+              <a href="#banking" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                  <i class="fa  fa-university"></i> <p class="mr-1 dis-inline">Banking</p>
+              </a>
+              <ul class="collapse list-unstyled" id="banking">
+                  <li>
+                      <a href="#">Bank Connections</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+              <a href="#">
+                  <i class="fa  fa-wallet"></i> <p class="mr-1 dis-inline">Payrolls</p>
+
+              </a>
+          </li>
+          <li>
+              <a href="#">
+                  <i class="fa  fa-signal"></i> <p class="mr-1 dis-inline">Reports</p>
+
+              </a>
           </li>
       </ul>
 
@@ -51,12 +87,20 @@
   <div id="content">
 
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
+          <div class="container-fluid header">
 
-              <button type="button" id="sidebarCollapse" class="btn btn-info">
+              <button type="button" id="sidebarCollapse" class="btn bt-grn text-light">
                   <i class="fas fa-align-left"></i>
-                  <span>Toggle Sidebar</span>
               </button>
+              <div class="dropdown" style="margin-right: 2%;cursor: pointer;">
+                  <span class="dropdown-toggle" data-toggle="dropdown">
+                   <i class="fa  fa-user-circle fa-2x"></i> <p style="font-size: 17px" class="dis-inline">Alabi Sodiq</p>
+                  </span>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#"><i class="fa fa-cog"></i> settings</a>
+                    <a class="dropdown-item" href="#"><i class="fa fa-sign-out-alt"></i> logout</a>
+                  </div>
+                </div>
           </div>
       </nav>
     <router-outlet></router-outlet>
