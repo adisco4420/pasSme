@@ -16,6 +16,17 @@ export class AuthService {
   loginUser(user) {
     return this.http.post(`${this.baseUrl}/login/`, user);
   }
+  setup(form) {
+    const body = {
+      currency: form.businessCurrency,
+      business_name: form.businessName,
+      country: form.businessCountry,
+      sector: form.businessSector,
+      business_type: form.businessType
+    };
+    console.log(arguments);
+    return this.http.post(`${this.baseUrl}/business/`, body);
+  }
   storeToken(token: string) {
     return localStorage.setItem('currentUser', token);
   }

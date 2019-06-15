@@ -14,7 +14,7 @@ export class OnboardingComponent implements OnInit {
   onboardingForm = new FormGroup({
     businessName: new FormControl('', Validators.required),
     businessType: new FormControl('', Validators.required),
-    businnessSector: new FormControl('', Validators.required),
+    businessSector: new FormControl('', Validators.required),
     businessCountry: new FormControl('', Validators.required),
     businessCurrency: new FormControl('', Validators.required),
   });
@@ -22,7 +22,10 @@ export class OnboardingComponent implements OnInit {
     return this.onboardingForm.controls;
   }
 
-  constructor(private router: Router, private coreSrv: CoreService) { }
+  constructor(
+    private router: Router,
+    private authSrv: AuthService,
+    private coreSrv: CoreService) { }
   countries = []; sectors = [];
   currencies = [
     {name: 'Dollar', slug: 'dollar'},
@@ -42,6 +45,13 @@ export class OnboardingComponent implements OnInit {
   }
   setup() {
     this.submitted = true;
+    if(this.onboardingForm.valid) {
+      this.authSrv.setup(this.onboardingForm.value).take(1).subscribe(data => {
+        console.log(data);
+      }, err => {
+        console.log(err);
+      });
+    }
     console.log(this.onboardingForm.value);
   }
   fetchData() {
