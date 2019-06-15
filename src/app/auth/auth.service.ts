@@ -5,16 +5,16 @@ import { environment } from '../../environments/environment';
 
 @Injectable()
 export class AuthService {
-  private authUrl = `${environment.baseUrl}/users`;
+  private baseUrl = `${environment.baseUrl}/users`;
 
   constructor(private http: HttpClient, private router: Router) { }
 
   registerUser(user) {
-    return this.http.post(`${this.authUrl}/register/`, user,
+    return this.http.post(`${this.baseUrl}/register/`, user,
     {headers: {'Content-Type': 'application/json'}});
   }
   loginUser(user) {
-    return this.http.post(`${this.authUrl}/login/`, user);
+    return this.http.post(`${this.baseUrl}/login/`, user);
   }
   storeToken(token: string) {
     return localStorage.setItem('currentUser', token);
