@@ -1,35 +1,183 @@
-<div class="container">
-  <div class="text-center py-3">
-    <h1>Welcome To Passme </h1>
-    <h5 class="text-muted">Where do you want to start?</h5>
-  </div>
-  <div class="row px-2 landing-card">
-    <div class="col-md-4 mb-2 ">
-      <div class="card">
-        <div class="card-body text-center">
-          <img class="img img-fluid" src="https://d3pgswpng8id0l.cloudfront.net/sitestatic/dashboard/images/spot-invoice-2.svg" alt="img-1">
-          <h5 class="mt-3">Get paid for your work</h5>
-          <p class="mt-1">send unlimited invoices and estimates to your customers</p>
+<div class="container px-4">
+  <div class="row">
+    <div class="col-md-12 py-2">
+      <h2 style="display: inline">Dashboard</h2>
+      <div class="float-right mt-1">
+        <div class="dropdown">
+          <button class="btn bt-grn btn-round dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Create a new
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Estimate</a>
+            <a class="dropdown-item" href="#">Invoice</a>
+            <a class="dropdown-item" href="#">Bill</a>
+            <a class="dropdown-item" href="#">Customer</a>
+            <a class="dropdown-item" href="#">Vendor</a>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-4 mb-2 ">
-        <div class="card">
-            <div class="card-body text-center">
-              <img class="img img-fluid" src="https://d3pgswpng8id0l.cloudfront.net/sitestatic/dashboard/images/spot-accounting-2.svg" alt="img-1">
-              <h5 class="mt-3">Organize your finance</h5>
-              <p class="mt-1">automatic income and expense trackking</p>
-            </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-4">
+      <h4>Bank Account &amp; Credit Cards</h4>
+      <div class="card text-center px-2">
+        <div class="card-body">
+          <a href="#" class="btn bt-grn btn-round">Connect a Bank Account</a>
+          <div class="mt-2">
+           <p> ------- or -------</p>
           </div>
+          <div>
+            <a class="text-grn" href="">Upload a Bank Statement</a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="col-md-4 mb-2 ">
-        <div class="card">
-            <div class="card-body text-center">
-              <img class="img img-fluid" src="https://d3pgswpng8id0l.cloudfront.net/sitestatic/dashboard/images/spot-receipt-2.svg" alt="img-1">
-              <h5 class="mt-3">Capture your reciept</h5>
-              <p class="mt-1">stay complaint by keeping accurate record</p>
-            </div>
+    <div class="col-md-8">
+      <h4>Cash Flow</h4>
+      <div>
+        <p>Cash coming in and going out of your business. <a class="float-right text-grn" routerLink="#">View Report</a></p>
+        <p style="font-size: 13px">
+          <span class="cur-pt"><i class="fa fa-arrow-up"></i> Inflow</span>
+          <span class="cur-pt"><i class="fa fa-arrow-down"></i> Outflow</span>
+          <span class="cur-pt"><i class="fa fa-arrows-alt-h"></i> Net Change</span>
+          <span class="float-right">
+            <a class="text-grn" href="#">Last 12 Months</a>
+            <a class="text-secondary" href="#">Last 24 Months</a>
+          </span>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-4">
+      <h4>Things you can do</h4>
+      <p><a class="text-grn" href="#">Add a customer</a></p>
+      <p><a class="text-grn" href="#">Add a vendor</a></p>
+      <p><a class="text-grn" href="#">Customize your invoice</a></p>
+    </div>
+    <div class="col-md-8">
+      <h4>Profit &amp; Loss</h4>
+      <p>Income and expenses only (includes unpaid invoices and bills).
+        <a class="float-right text-grn" routerLink="#">View Report</a></p>
+        <div class="check-inline">
+          <div class="custom-control custom-checkbox mr-sm-2">
+              <input type="checkbox" class="custom-control-input" id="invoice">
+              <label class="custom-control-label" for="invoice">Invoice</label>
           </div>
+          <div class="custom-control custom-checkbox mr-sm-2">
+              <input type="checkbox" class="custom-control-input" id="expense">
+              <label class="custom-control-label" for="expense">Expense</label>
+          </div>
+          <span class="float-right">
+              <a class="text-grn" href="#">Last 12 Months</a>
+              <a class="text-secondary" href="#">Last 24 Months</a>
+            </span>
+        </div>
+    </div>
+  </div>
+  <div class="row mt-3">
+    <div class="col-md-5">
+      <h4>New Income</h4>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Fiscal Year</th>
+                <th scope="col">2018</th>
+                <th scope="col">2019</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Income</td>
+                <td>0.00</td>
+                <td>0.00</td>
+              </tr>
+              <tr>
+                <td>Expense</td>
+                <td>0.00</td>
+                <td>0.00</td>
+              </tr>
+              <tr>
+                <td>Net Income</td>
+                <td>0.00</td>
+                <td>0.00</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    </div>
+    <div class="col-md-7">
+        <h4>Payable &amp; Owning</h4>
+      <div class="row">
+        <div class="col-md-6">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th  colspan="12" scope="col">Invoice Payable to you</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td colspan="6"><a class="text-grn" href="#">Coming Due</a></td>
+                        <td colspan="4">$0.00</td>
+                      </tr>
+                      <tr>
+                          <td colspan="6">1-30 days overdue</td>
+                          <td colspan="4">$0.00</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">31-60 days overdue</td>
+                            <td colspan="4">$0.00</td>
+                          </tr>
+                          <tr>
+                              <td colspan="6">61-90 days overdue</td>
+                              <td colspan="4">$0.00</td>
+                            </tr>
+                            <tr>
+                                <td colspan="6">> 90 days overdue</td>
+                                <td colspan="4">$0.00</td>
+                              </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+      <div class="table-responsive">
+          <table class="table">
+              <thead>
+                <tr>
+                  <th  colspan="12" scope="col">Bill you owe</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colspan="6"><a class="text-grn" href="#">Coming Due</a></td>
+                  <td colspan="4">$0.00</td>
+                </tr>
+                <tr>
+                    <td colspan="6">1-30 days overdue</td>
+                    <td colspan="4">$0.00</td>
+                  </tr>
+                  <tr>
+                      <td colspan="6">31-60 days overdue</td>
+                      <td colspan="4">$0.00</td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">61-90 days overdue</td>
+                        <td colspan="4">$0.00</td>
+                      </tr>
+                      <tr>
+                          <td colspan="6">> 90 days overdue</td>
+                          <td colspan="4">$0.00</td>
+                        </tr>
+              </tbody>
+            </table>
+      </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

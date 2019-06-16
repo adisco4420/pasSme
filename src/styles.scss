@@ -1,6 +1,21 @@
+$bg-lt-green: #00cc99;
 body{
   font-family: 'Ubuntu', Times, serif
 }
 .bg-lt-green{
   background-color: #5ce6a3 !important
+}
+.btn-round{
+  border-radius: 20px !important;
+}
+
+.bt-grn{
+  background-color: $bg-lt-green !important;
+  color: white !important;
+}
+.text-grn{
+  color: $bg-lt-green !important;
+}
+.cur-pt{
+  cursor: pointer !important;
 }
