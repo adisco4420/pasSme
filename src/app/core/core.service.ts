@@ -11,8 +11,14 @@ export class CoreService {
   getCountries() {
     return this.http.get(`${this.baseUrl}/countries/`);
   }
-  getSector() {
+  getSectors() {
     return this.http.get(`${this.baseUrl}/sectors/`);
+  }
+  getCurrencies() {
+    return this.http.get(`${this.baseUrl}/currencys/`);
+  }
+  getBusinessTypes() {
+    return this.http.get(`${this.baseUrl}/business_types/`);
   }
 
 }

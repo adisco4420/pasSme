@@ -56,7 +56,9 @@ export class OnboardingComponent implements OnInit {
   }
   fetchData() {
     this.coreSrv.getCountries().take(1).subscribe((data: any) => this.countries = data);
-    this.coreSrv.getSector().take(1).subscribe((data: any)  => this.sectors = data);
+    this.coreSrv.getSectors().take(1).subscribe((data: any)  => this.sectors = data);
+    this.coreSrv.getCurrencies().take(1).subscribe((data: any)  => this.currencies = data);
+    this.coreSrv.getBusinessTypes().take(1).subscribe((data: any)  => this.businessTypes = data);
   }
 
 }
