@@ -1,7 +1,7 @@
 /*
     DEMO STYLE
 */
-$bg-lt-green: #00cc99;
+$bg-lt-green: #e6e6e6;
 @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700");
 body {
     font-family: 'Poppins', sans-serif;
@@ -65,7 +65,7 @@ a:focus {
     height: 100vh;
     z-index: 999;
     background: $bg-lt-green;
-    color: #fff;
+    color: #4d6575;
     transition: all 0.3s;
 }
 
@@ -93,7 +93,7 @@ a:focus {
     margin-right: 15px
 }
 #sidebar ul p {
-    color: #fff;
+    color: #4d6575;
     padding: 15px;
 }
 
@@ -110,7 +110,7 @@ a:focus {
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
-    color: #fff;
+    color: #4d6575;
     background: $bg-lt-green;
 }
 

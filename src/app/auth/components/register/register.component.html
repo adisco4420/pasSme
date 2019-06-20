@@ -29,11 +29,6 @@
                     <div *ngIf="!password.errors['required'] && password.errors['minlength']">password minimum character is 6</div>
                   </div>
                   </div>
-                  <div class="col-md-12 mt-1">
-                    <h6 class="text-muted float-left">
-                      Password should be atleast 6 characters
-                    </h6>
-                  </div>
                 <div class="col-md-12 mt-4">
                 <button [disabled]="loading" type="submit" class="btn btn-success btn-block btn-round">
                   Get Started <i *ngIf="loading" class="fa fa-spinner fa-spin"></i>

@@ -30,6 +30,7 @@ export class RegisterComponent implements OnInit {
       this.errMsg = {status: false, code: 0};
       this.authSrv.registerUser(this.registerForm.value).subscribe(data => {
         this.loading = false; this.sucMsg = true;
+        this.loginUser();
         this.goToSetup();
       }, err => {
         this.errMsg = {status: true, code: err.status};
@@ -44,6 +45,9 @@ export class RegisterComponent implements OnInit {
     setTimeout(() => {
       this.router.navigate(['/auth/onboarding']);
     }, 2000);
+  }
+  loginUser() {
+    this.authSrv.loginUser(this.registerForm.value).subscribe((data: any) => localStorage.setItem('currentUser', data.token));
   }
 
 }

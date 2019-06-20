@@ -7,64 +7,65 @@
 
       <ul class="list-unstyled components">
           <li class="active">
-              <a href="#"> <i class="fa fa-tachometer-alt"></i> <p class="mr-1 dis-inline">Dashboard</p></a>
+              <a routerLink="/dashboard"> <i class="fa fa-tachometer-alt"></i> <p class="mr-1 dis-inline">Dashboard</p></a>
           </li>
+          <li>
+            <a href="#accounting" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <i class="fa  fa-balance-scale"></i> <p class="mr-1 dis-inline">Accounting</p>
+            </a>
+            <ul class="collapse list-unstyled" id="accounting">
+                <li>
+                    <li>
+                        <a href="#">trial balance</a>
+                    </li>
+                    <li>
+                        <a href="#">journals</a>
+                 </li>
+                 <li>
+                  <a href="#">balance sheet</a>
+           </li>
+            </ul>
+        </li>
           <li >
               <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                  <i class="fa  fa-credit-card"></i> <p class="mr-1 dis-inline">Sales</p>
+                  <i class="fa  fa-credit-card"></i> <p class="mr-1 dis-inline">Invoicing</p>
               </a>
               <ul class="collapse list-unstyled" id="homeSubmenu">
                   <li>
-                      <a href="#">Estimates</a>
+                      <a routerLink="create-invoice">create invoice</a>
                   </li>
                   <li>
-                      <a href="#">Invoices</a>
+                      <a href="#">list invoice</a>
                   </li>
                   <li>
-                      <a href="#">Customers</a>
+                      <a href="#">send invoice</a>
                   </li>
                   <li>
-                      <a href="#">Products &amp; Services</a>
+                      <a href="#">print invoice</a>
                   </li>
               </ul>
           </li>
           <li>
               <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                  <i class="fa  fa-shopping-cart"></i> <p class="mr-1 dis-inline">Purchases</p>
+                  <i class="fa  fa-shopping-cart"></i> <p class="mr-1 dis-inline">Asset Mgt</p>
               </a>
               <ul class="collapse list-unstyled" id="pageSubmenu">
                   <li>
-                      <a href="#">Bills</a>
+                      <a href="#">depreciate table</a>
                   </li>
                   <li>
-                      <a href="#">Receipts</a>
-                  </li>
-                  <li>
-                      <a href="#">Vendors</a>
+                      <a href="#">fixed asset</a>
                   </li>
               </ul>
           </li>
-          <li>
-              <a href="#accounting" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                  <i class="fa  fa-balance-scale"></i> <p class="mr-1 dis-inline">Accounting</p>
-              </a>
-              <ul class="collapse list-unstyled" id="accounting">
-                  <li>
-                      <li>
-                          <a href="#">Transactions</a>
-                      </li>
-                      <li>
-                          <a href="#">Reconsilations</a>
-                   </li>
-              </ul>
-          </li>
+
           <li>
               <a href="#banking" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                  <i class="fa  fa-university"></i> <p class="mr-1 dis-inline">Banking</p>
+                  <i class="fa  fa-university"></i> <p class="mr-1 dis-inline">Loan Mgt</p>
               </a>
               <ul class="collapse list-unstyled" id="banking">
                   <li>
-                      <a href="#">Bank Connections</a>
+                      <a href="#">loan application</a>
                   </li>
               </ul>
           </li>

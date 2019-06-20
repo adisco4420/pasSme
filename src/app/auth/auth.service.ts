@@ -14,18 +14,24 @@ export class AuthService {
     {headers: {'Content-Type': 'application/json'}});
   }
   loginUser(user) {
-    return this.http.post(`${this.baseUrl}/login/`, user);
+    const body = {username: user.email, password: user.password};
+    return this.http.post(`${this.baseUrl}/login/`, body);
   }
   setup(form) {
+    const token = localStorage['currentUser'];
+    console.log(token);
     const body = {
-      currency: form.businessCurrency,
-      business_name: form.businessName,
-      country: form.businessCountry,
-      sector: form.businessSector,
-      business_type: form.businessType
+      "business_name": "Alade and Sons",
+      "sector": "manufacturing",
+      "country": "nigeria",
+      "currency": "naira",
+      "business_type": "corporation"
     };
     console.log(arguments);
-    return this.http.post(`${this.baseUrl}/business/`, body);
+    return this.http.post(`${this.baseUrl}/business/`, body, {
+      headers: {
+        'Authorization': token
+      }});
   }
   storeToken(token: string) {
     return localStorage.setItem('currentUser', token);
