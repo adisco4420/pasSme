@@ -8,7 +8,7 @@ const routes: Routes = [
     { path: '', redirectTo: '/auth/register', pathMatch: 'full' },
     { path: 'auth', loadChildren: './auth/auth.module#AuthModule'},
     { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule',
-      // canActivate: [AuthGuard]
+      canActivate: [AuthGuard]
     },
     { path: '**', redirectTo: '/auth/register' },
 ];

@@ -1,3 +1,4 @@
+import { DashboardService } from './../../../dashboard.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 
@@ -28,7 +29,7 @@ export class CreateInvoiceComponent implements OnInit {
     address: new FormControl('')
   })
 
-  constructor(private formBuilder: FormBuilder) { 
+  constructor(private formBuilder: FormBuilder, private dashSrv: DashboardService) { 
     this.createInvoiceForm = this.formBuilder.group({
       invoiceNo: new FormControl(''),
       posNo: '',
@@ -41,8 +42,8 @@ export class CreateInvoiceComponent implements OnInit {
     return this.formBuilder.group({
       name: '',
       description: '',
-      price: '',
-      quantity: ''
+      price: 0,
+      quantity: 1
     });
   }
   get itemsControl() {
@@ -69,6 +70,13 @@ export class CreateInvoiceComponent implements OnInit {
   }
   create() {
     console.log(this.createInvoiceForm.value, this.invoiceFooterForm.value, this.invoiceHeaderForm.value);
+    const body = {...this.createInvoiceForm.value, ...this.invoiceFooterForm.value, ...this.invoiceHeaderForm.value  }
+    this.dashSrv.createInvoice(body).subscribe(data => {
+      console.log(data);
+    }, err => {
+      console.log(err);
+    })
+
   }
   addCustomer() {
     console.log(this.addCustomerForm.value);
