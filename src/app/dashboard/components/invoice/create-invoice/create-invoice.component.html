@@ -1,11 +1,11 @@
-<div class="container-fluid">
+<div class="container">
   <div class="row">
     <div class="col-md-12">
       <h3 style="display: inline">New Invoice</h3>
-      <span class="float-right mt-2">
+      <div  class="float-right dis-inline mr-4 mt-2">
         <button class="btn btn-outline-dark">Preview</button>
         <button class="ml-1 btn btn-success">Save and Continue</button>
-      </span>
+      </div>
     </div>
   </div>
   <div class="row mt-5 create-invoice" style="width: 100%">
@@ -43,6 +43,7 @@
                           (change)="selectImage($event)"
                           type="file"
                           id="uploadFile"
+                          accept="image/*"
                         />
                         <i
                           (click)="triggerImg()"
@@ -185,7 +186,7 @@
                   </div>
                 </div>
               </div>
-              <div class="row">
+              <div class="row" [formGroup]="createInvoiceForm" >
                 <div class="col-md-12">
                   <div class="table-responsive">
                     <table class="table table-striped">
@@ -198,30 +199,37 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td colspan="3">
-                            <input
-                              placeholder="item name"
-                              type="text"
-                              class="form-control"
-                            />
-                          </td>
-                          <td colspan="5">
-                            <input
-                              placeholder="item description"
-                              type="text"
-                              class="form-control"
-                            />
-                          </td>
-                          <td colspan="1">
-                            <input value="1" type="text" class="form-control" />
-                          </td>
-                          <td colspan="1">
-                            <input value="0" type="text" class="form-control" />
-                          </td>
-                          <td colspan="1"><p>$0.00</p></td>
-                          <td colspan="1"><i class="fa fa-trash"></i></td>
-                        </tr>
+                            <tr  formArrayName="items" *ngFor="let item of createInvoiceForm.get('items').controls; let i = index;" >
+                              <ng-container [formGroupName]="i">
+                                  <td colspan="3">
+                                      <input
+                                        formControlName="name"
+                                        placeholder="item name"
+                                        type="text"
+                                        class="form-control"
+                                      />
+                                    </td>
+                                    <td colspan="5">
+                                      <input
+                                      formControlName="description"
+                                        placeholder="item description"
+                                        type="text"
+                                        class="form-control"
+                                      />
+                                    </td>
+                                    <td colspan="1">
+                                      <input formControlName="quantity" value="1" type="number" class="form-control" />
+                                    </td>
+                                    <td colspan="1">
+                                      <input value="0" formControlName="price" type="number" class="form-control" />
+                                    </td>
+                                    <td colspan="1"><p>{{(itemsControl.controls[i].controls.price.value * itemsControl.controls[i].controls.quantity.value) | currency}}</p></td>
+                                    <td colspan="1"><i (click)="removeItem(i)" class="fa fa-trash clickable"></i></td>
+                                   
+                              </ng-container>
+                              </tr>
+
+
                       </tbody>
                     </table>
                   </div>
@@ -229,7 +237,7 @@
               </div>
               <div class="row">
                 <div class="col-md-12 text-center text-grn">
-                  <p style="cursor: pointer">
+                  <p (click)="addItem()"  style="cursor: pointer">
                     <i class="fa fa-plus-circle"></i> Add an item
                   </p>
                 </div>
@@ -279,9 +287,9 @@
   <div class="row mb-5">
     <div class="col-md-12">
       <!-- <h3  style="display: inline">New Invoice</h3> -->
-      <span class="float-right mt-2">
+      <span class="float-right mr-4 mt-2">
         <button class="btn btn-outline-dark">Preview</button>
-        <button class="ml-1 btn btn-success">Save and Continue</button>
+        <button (click)="create()" class="ml-1 btn btn-success">Save and Continue</button>
       </span>
     </div>
   </div>
