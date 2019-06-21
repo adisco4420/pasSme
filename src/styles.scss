@@ -16,6 +16,9 @@ body{
 .text-grn{
   color: $bg-lt-green !important;
 }
-.cur-pt{
+.clickable{
   cursor: pointer !important;
+}
+.dis-inline{
+  display: inline !important;
 }
