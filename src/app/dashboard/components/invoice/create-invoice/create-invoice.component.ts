@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
   styleUrls: ['./create-invoice.component.scss']
 })
 export class CreateInvoiceComponent implements OnInit {
+  customer: object;
   imageText = `Maximum 5MB in size.
   JPG, PNG, or GIF formats.
   Recommended size: 300 x 200 pixels`;
@@ -29,7 +30,7 @@ export class CreateInvoiceComponent implements OnInit {
     address: new FormControl('')
   })
 
-  constructor(private formBuilder: FormBuilder, private dashSrv: DashboardService) { 
+  constructor(private formBuilder: FormBuilder, private dashSrv: DashboardService) {
     this.createInvoiceForm = this.formBuilder.group({
       invoiceNo: new FormControl(''),
       posNo: '',
@@ -52,11 +53,11 @@ export class CreateInvoiceComponent implements OnInit {
   addItem(): void {
     this.items = this.createInvoiceForm.get('items') as FormArray;
     this.items.push(this.createItem());
+    // this.sumUp();
   }
   removeItem(index) {
-    console.log(index);
     this.items = this.createInvoiceForm.get('items') as FormArray;
-    this.items.removeAt(index)
+    this.items.removeAt(index);
   }
   ngOnInit() {
   }
@@ -79,8 +80,16 @@ export class CreateInvoiceComponent implements OnInit {
 
   }
   addCustomer() {
+    this.customer = this.addCustomerForm.value;
     console.log(this.addCustomerForm.value);
-    
+  }
+  sumUp(): number {
+    let total = 0;
+    const items = this.createInvoiceForm.get('items').value;
+    items.map(item => {
+     total = total + (item.price * item.quantity);
+    });
+    return total;
   }
 
 

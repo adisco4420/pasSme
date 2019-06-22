@@ -77,7 +77,7 @@
             <div class="card-body" [formGroup]="createInvoiceForm">
               <div class="row">
                 <div class="col-md-4">
-                  <div class="card text-center">
+                  <div *ngIf="!customer" class="card text-center">
                     <div class="card-body p-5">
                       <div>
                         <p style="cursor: pointer" data-toggle="modal" data-target="#createCustomer">
@@ -85,6 +85,13 @@
                         </p>
                       </div>
                     </div>
+                  </div>
+                  <div *ngIf="customer">
+                    <p>{{customer.name}}</p>
+                    <p>{{customer.email}}</p>
+                    <p>{{customer.phoneNo}}</p>
+                    <p>{{customer.address}}</p>
+                    <button data-toggle="modal" data-target="#createCustomer" class="btn btn-sm btn-success">Edit</button>
                   </div>
                 </div>
                 <div class="col-md-6 ml-auto ">
@@ -169,7 +176,7 @@
                   </p>
                 </div>
                 <div class="col-md-12 ">
-                  <p><b>Sub Total: $0.00 </b></p>
+                  <p><b>Sub Total: {{sumUp() | currency}} </b></p>
                 </div>
               </div>
             </div>
