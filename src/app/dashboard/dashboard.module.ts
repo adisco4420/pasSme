@@ -9,6 +9,7 @@ import { CreateInvoiceComponent } from './invoice/create-invoice/create-invoice.
 import { SummaryComponent } from './accounting/summary/summary.component';
 import { SharedModule } from '../shared/shared.module';
 import { ChartOfAccountsComponent } from './accounting/chart-of-accounts/chart-of-accounts.component';
+import { AssetsComponent } from './accounting/chart-of-accounts/assets/assets.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { ChartOfAccountsComponent } from './accounting/chart-of-accounts/chart-o
     DashboardRoutingModule,
     SharedModule
   ],
-  declarations: [LandingComponent, SidebarComponent, CreateInvoiceComponent, SummaryComponent, ChartOfAccountsComponent],
+  declarations: [LandingComponent, SidebarComponent, CreateInvoiceComponent, SummaryComponent, ChartOfAccountsComponent, AssetsComponent],
   providers: [DashboardService]
 })
 export class DashboardModule { }
