@@ -23,23 +23,19 @@ export class LoginComponent implements OnInit {
   }
   login() {
     this.submmitted = true;
-    this.errMsg = {status: false, code: 0 };; this.sucMsg = null
+    this.errMsg = {status: false, code: 0 };; this.sucMsg = null;
     if (this.loginForm.valid) {
-      this.loading = true
+      this.loading = true;
       this.authSrv.loginUser(this.loginForm.value).subscribe(data => {
         this.loading = false; this.sucMsg = true;
-        console.log(data);
         localStorage.setItem('currentUser', data['token']);
-        this.router.navigate(['/dashboard'])
+        this.router.navigate(['/dashboard']);
       }, err => {
         this.errMsg = {status: true, code: err.status};
-        this.loading = false
+        this.loading = false;
         console.log(err);
-      })
+      });
     }
-
-    
-
   }
 
 }

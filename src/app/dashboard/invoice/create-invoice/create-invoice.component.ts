@@ -1,4 +1,4 @@
-import { DashboardService } from './../../../dashboard.service';
+import { DashboardService } from './../../dashboard.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 
