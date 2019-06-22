@@ -1,3 +1,4 @@
+import { ChartOfAccountsComponent } from './accounting/chart-of-accounts/chart-of-accounts.component';
 import { SummaryComponent } from './accounting/summary/summary.component';
 import { CreateInvoiceComponent } from './invoice/create-invoice/create-invoice.component';
 import { NgModule } from '@angular/core';
@@ -10,7 +11,8 @@ const routes: Routes = [
     children: [
       { path: '', component: LandingComponent},
       { path: 'create-invoice', component: CreateInvoiceComponent},
-      { path: 'act-summary', component: SummaryComponent}
+      { path: 'act-summary', component: SummaryComponent},
+      { path: 'chart-of-accounts', component: ChartOfAccountsComponent},
     ]},
 ];
 

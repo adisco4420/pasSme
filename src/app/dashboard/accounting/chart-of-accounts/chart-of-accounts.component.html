@@ -1,3 +1,50 @@
-<p>
-  chart-of-accounts works!
-</p>
+<div class="container p-4">
+  <header class="mt-2">
+    <h3 style="display: inline">Chart of Accounts</h3>
+    <span class="float-right">
+      <button class="btn btn-success"> <i class="fa fa-plus-circle"></i> Add a New Account</button>
+    </span>
+  </header>
+  <div class="row mt-3">
+    <div class="col-md-12">
+<div class="table-responsive">
+  <div class="table">
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="assets" data-toggle="tab" href="#assets" role="tab" aria-controls="home" aria-selected="true">
+              Assets <span class="badge badge-secondary badge-pill">3</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="liability-tab" data-toggle="tab" href="#liability" role="tab" aria-controls="liability" aria-selected="false">
+              Liabilities & Credit Cards <span class="badge badge-secondary badge-pill">1</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#income" role="tab" aria-controls="income" aria-selected="false">
+              Income <span class="badge badge-secondary badge-pill">5</span>
+            </a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" id="expense-tab" data-toggle="tab" href="#expense" role="tab" aria-controls="expense" aria-selected="false">
+                Expenses <span class="badge badge-secondary badge-pill">15</span>
+              </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="equity-tab" data-toggle="tab" href="#equity" role="tab" aria-controls="equity" aria-selected="false">
+                  Equity <span class="badge badge-secondary badge-pill">15</span>
+                </a>
+              </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="assets"><p>Assets</p></div>
+          <div class="tab-pane fade" id="liability" role="tabpanel" aria-labelledby="profile-tab"><p>Liability</p></div>
+          <div class="tab-pane fade" id="income" role="tabpanel" aria-labelledby="contact-tab"><p>Income</p></div>
+          <div class="tab-pane fade" id="expense" role="tabpanel" aria-labelledby="contact-tab"><p>Expense</p></div>
+          <div class="tab-pane fade" id="equity" role="tabpanel" aria-labelledby="equity-tab"><p>Equity</p></div>
+        </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
