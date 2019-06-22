@@ -138,7 +138,7 @@
                       </thead>
                       <tbody>
                         <tr formArrayName="items"
-                          *ngFor="let item of createInvoiceForm.get('items').controls; let i = index;">
+                          *ngFor="let item of createInvoiceForm.get('items')['controls']; let i = index;">
                           <ng-container [formGroupName]="i">
                             <td colspan="3">
                               <input formControlName="name" placeholder="item name" type="text" class="form-control" />
