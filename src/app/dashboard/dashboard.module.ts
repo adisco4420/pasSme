@@ -1,3 +1,4 @@
+import { DashboardService } from './dashboard.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -14,6 +15,7 @@ import { SharedModule } from '../shared/shared.module';
     DashboardRoutingModule,
     SharedModule
   ],
-  declarations: [LandingComponent, SidebarComponent, CreateInvoiceComponent, SummaryComponent]
+  declarations: [LandingComponent, SidebarComponent, CreateInvoiceComponent, SummaryComponent],
+  providers: [DashboardService]
 })
 export class DashboardModule { }

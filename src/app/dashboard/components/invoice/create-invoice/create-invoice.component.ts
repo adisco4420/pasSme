@@ -1,5 +1,6 @@
+import { DashboardService } from './../../../dashboard.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
+import { FormBuilder, FormGroup, FormArray, FormControl } from '@angular/forms';
 
 
 @Component({
@@ -14,27 +15,35 @@ export class CreateInvoiceComponent implements OnInit {
   createInvoiceForm: FormGroup;
   items: FormArray;
 
-  constructor(private formBuilder: FormBuilder) { 
+  invoiceHeaderForm = new FormGroup({
+    title: new FormControl(''),
+    summary: new FormControl('')
+  })
+  invoiceFooterForm = new FormGroup({
+    note: new FormControl('')
+  })
+  addCustomerForm = new FormGroup({
+    name: new FormControl(''),
+    email: new FormControl(''),
+    phoneNo: new FormControl(''),
+    address: new FormControl('')
+  })
+
+  constructor(private formBuilder: FormBuilder, private dashSrv: DashboardService) { 
     this.createInvoiceForm = this.formBuilder.group({
-      customerName: '',
-      email: '',
+      invoiceNo: new FormControl(''),
+      posNo: '',
+      invoiceDate: '',
+      paymentDue: '',
       items: this.formBuilder.array([ this.createItem() ])
-    });
-  }
- get header(): FormGroup {
-    return this.formBuilder.group({
-      title: '',
-      summary: '',
-      price: '',
-      quantity: ''
     });
   }
   createItem(): FormGroup {
     return this.formBuilder.group({
       name: '',
       description: '',
-      price: '',
-      quantity: ''
+      price: 0,
+      quantity: 1
     });
   }
   get itemsControl() {
@@ -60,7 +69,18 @@ export class CreateInvoiceComponent implements OnInit {
     document.getElementById('uploadFile').click();
   }
   create() {
-    console.log(this.createInvoiceForm.value);
+    console.log(this.createInvoiceForm.value, this.invoiceFooterForm.value, this.invoiceHeaderForm.value);
+    const body = {...this.createInvoiceForm.value, ...this.invoiceFooterForm.value, ...this.invoiceHeaderForm.value  }
+    this.dashSrv.createInvoice(body).subscribe(data => {
+      console.log(data);
+    }, err => {
+      console.log(err);
+    })
+
+  }
+  addCustomer() {
+    console.log(this.addCustomerForm.value);
+    
   }
 
 
