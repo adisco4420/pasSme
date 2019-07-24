@@ -10,11 +10,11 @@
 <div class="table-responsive">
   <div class="table">
       <ul class="nav nav-tabs" id="myTab" role="tablist">
-          <li class="nav-item">
-            <a class="nav-link active" id="assets" data-toggle="tab" href="#assets" role="tab" aria-controls="home" aria-selected="true">
-              Assets <span class="badge badge-secondary badge-pill">3</span>
-            </a>
-          </li>
+          <li class="nav-item ">
+              <a class="nav-link active " id="assets-tab" data-toggle="tab" href="#assets" role="tab" aria-controls="assets" aria-selected="false">
+                Assets <span class="badge badge-secondary badge-pill">1</span>
+              </a>
+            </li>
           <li class="nav-item">
             <a class="nav-link" id="liability-tab" data-toggle="tab" href="#liability" role="tab" aria-controls="liability" aria-selected="false">
               Liabilities & Credit Cards <span class="badge badge-secondary badge-pill">1</span>
@@ -27,7 +27,7 @@
           </li>
           <li class="nav-item">
               <a class="nav-link" id="expense-tab" data-toggle="tab" href="#expense" role="tab" aria-controls="expense" aria-selected="false">
-                Expenses <span class="badge badge-secondary badge-pill">15</span>
+                Expenses <span class="badge badge-secondary badge-pill">7</span>
               </a>
             </li>
             <li class="nav-item">
@@ -37,7 +37,9 @@
               </li>
         </ul>
         <div class="tab-content" id="myTabContent">
-          <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="assets"><p>Assets</p></div>
+          <div class="tab-pane show active fade" id="assets" role="tabpanel" aria-labelledby="assets-tab">
+            <app-assets></app-assets>
+          </div>
           <div class="tab-pane fade" id="liability" role="tabpanel" aria-labelledby="profile-tab"><p>Liability</p></div>
           <div class="tab-pane fade" id="income" role="tabpanel" aria-labelledby="contact-tab"><p>Income</p></div>
           <div class="tab-pane fade" id="expense" role="tabpanel" aria-labelledby="contact-tab"><p>Expense</p></div>
